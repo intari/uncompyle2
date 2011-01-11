@@ -201,7 +201,7 @@ def main(in_base, out_base, files, codes, outfile=None,
             if do_verify:
                 try:
                     verify.compare_code_with_srcfile(infile, outfile)
-                    print "+++ okay decompyling", infile, __memUsage()
+                    print "### +++ okay decompyling", infile, __memUsage()
                     okay_files += 1
                 except verify.VerifyCmpError, e:
 		    verify_failed_files += 1
@@ -210,6 +210,6 @@ def main(in_base, out_base, files, codes, outfile=None,
                     print >>sys.stderr, e
             else:
                 okay_files += 1
-                print "+++ okay decompyling", infile, __memUsage()
+                print "### +++ okay decompyling", infile, __memUsage()
     print '# decompiled %i files: %i okay, %i failed, %i verify failed' % \
           (tot_files, okay_files, failed_files, verify_failed_files)
